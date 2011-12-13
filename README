@@ -1,0 +1,22 @@
+INSTALLATION
+--------------------------------------------------------------------------------
+This script requires two external packages to be installed before being run:
+1. feedparser (http://code.google.com/p/feedparser/) - Documentation is given at
+the site on what to do, but if setuptools is present you simply need to download
+the source and run the setup script
+2. Twitter (http://mike.verdone.ca/twitter/) - Again with setuptools just type:
+$ easy_install twitter
+This package actually installs a couple of other tools to your path including a
+command line twitter client. Launching this client the first time by typing:
+$ twitter -h
+will begin a setup process that creates a twitter api token needed by this 
+script.
+
+The script also requires a couple of global variables to be set before use:
+
+TWITTER_OAUTH_KEY_FILE --> Path to twitter API token mentioned above
+REQUESTED_GAMES_FILENAME --> This should be the path to a text file with a
+newline delimited list of game titles that you wish the script to look for 
+
+
+
