@@ -29,7 +29,7 @@ import feedparser
 from twitter import Twitter, NoAuth, OAuth, read_token_file
 from twitter.cmdline import CONSUMER_KEY, CONSUMER_SECRET
 # Define where oauth key file for the twitter acoount @steam_sale_bot is located
-TWITTER_OAUTH_KEY_FILE='/Users/Matt/.twitter_oauth_steamsalebot'
+TWITTER_OAUTH_KEY_FILE='/home/matt/.twitter_oauth_steamsalebot'
 OAUTH = OAuth(*read_token_file(TWITTER_OAUTH_KEY_FILE) + (CONSUMER_KEY, CONSUMER_SECRET))
 TWITTER = Twitter(domain='api.twitter.com', auth=OAUTH, api_version='1')
 
@@ -37,7 +37,7 @@ TWITTER = Twitter(domain='api.twitter.com', auth=OAUTH, api_version='1')
 STEAM_GAME_SALES_FEED_URL = 'feed://www.steamgamesales.com/rss/?region=uk&stores=steam'
 # Name of plaintext file that lists games we will search rss feed for. The file is
 # simply a list of games delimited by a new line.
-REQUESTED_GAMES_FILENAME = '/Users/Matt/Projects/python/steam_sale_finder/wanted_steam_games.txt'
+REQUESTED_GAMES_FILENAME = '/home/matt/steam_sale_finder/wanted_steam_games.txt'
 # Name of timestamp file which is an empty file, whose modification time is 
 # always set to the current time this script is run. This is used to determine  
 # which entries in the rss feed are 'new' and hence havent been checked yet
@@ -164,4 +164,5 @@ def tweet_interesting_steam_sales():
 
 #_______________________________________________________________________________
 if __name__ == "__main__":
-   tweet_interesting_steam_sales()
+   tweet_interesting_steam_sales(
+)
