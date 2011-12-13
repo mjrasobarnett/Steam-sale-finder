@@ -40,6 +40,7 @@ STEAM_GAME_SALES_FEED_URL = 'feed://www.steamgamesales.com/rss/?region=uk&stores
 REQUESTED_GAMES_FILENAME = '/Users/Matt/Projects/python/steam_sale_finder/wanted_steam_games.txt'
 # Name of timestamp file which is an empty file, whose modification time is 
 # always set to the current time this script is run. This is used to determine  
+# which entries in the rss feed are 'new' and hence havent been checked yet
 TIMESTAMP_FILENAME = '.last_update'
 
 #_______________________________________________________________________________
