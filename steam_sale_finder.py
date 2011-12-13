@@ -139,7 +139,6 @@ def tweet_interesting_steam_sales():
          # Attempt to read the entry's title for offer information
          try:
             parsed_entry = read_rss_entry_title(an_entry.title)
-            raise RuntimeError, "RSS entry title didn't match expected format: %s" % an_entry.title
          except RuntimeError as error:
             # If we failed to read entry, proceed to next in the list
             print error
