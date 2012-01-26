@@ -112,7 +112,12 @@ def tweet_interesting_steam_sales():
    print the_feed.feed.title
    print "Number of Entries in Feed: %d" % len(the_feed.entries)
    print "Date last checked the feed: " + last_update_time_utc.ctime()
-   
+
+   # Set the modified (and access) times of the TIMESTAMP_FILENAME
+   # to the current time, so that the next time this script is run it will know
+   # when it was last run
+   os.utime(TIMESTAMP_FILENAME, None)
+
    # Read in list of games we are interested in from 'REQUESTED_GAMES_FILENAME'
    requested_games = []
    try:
@@ -156,10 +161,6 @@ def tweet_interesting_steam_sales():
          break
             
    print "Number of Entries since last checked: %d" % entries_since_last_check
-   # Set the modified (and access) times of the TIMESTAMP_FILENAME
-   # to the current time, so that the next time this script is run it will know
-   # when it was last run
-   os.utime(TIMESTAMP_FILENAME, None)
    return True
 
 #_______________________________________________________________________________
